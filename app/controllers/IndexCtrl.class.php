@@ -38,7 +38,7 @@ class IndexCtrl {
 
     public function NaIleStr() {
         $this->ZliczToDo();
-        $this->zadania->ilenastronie = 3;
+        $this->zadania->ilenastronie = 4;
         $this->zadania->modulo = count($this->zadania->ilosc) % $this->zadania->ilenastronie;
         $this->zadania->beka = (count($this->zadania->ilosc) - $this->zadania->modulo) / $this->zadania->ilenastronie;
         if($this->zadania->modulo>0) {
@@ -94,13 +94,12 @@ class IndexCtrl {
         App::getRouter()->redirectTo("indexShow");
         }
 
-
     public function action_indexShow() {
         $this->validate();
         if(!empty($this->user->id)) {
             $this->zbytnormalne();
         }
-    
+
         App::getSmarty()->assign('user',SessionUtils::loadObject('user', true));
         App::getSmarty()->assign('todo',$this->todo);
         App::getSmarty()->assign('zadania',$this->zadania);
