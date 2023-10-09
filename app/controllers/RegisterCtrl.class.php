@@ -7,6 +7,7 @@ use core\Utils;
 use core\RoleUtils;
 use core\ParamUtils;
 use app\forms\LoginForm;
+use core\Validator;
 
 class RegisterCtrl {
 
@@ -19,29 +20,53 @@ class RegisterCtrl {
     }
 
     public function validate() {
-        $this->form->firstname = ParamUtils::getFromRequest('firstname');
-        $this->form->lastname = ParamUtils::getFromRequest('lastname');
-        $this->form->email = ParamUtils::getFromRequest('email');
-        $this->form->pass = ParamUtils::getFromRequest('pass');
+        $v = new Validator();
+
+        $this->form->firstname = $v->validateFromRequest('firstname',[
+            'trim' => true,
+            'required' => true,
+            'required_message' => 'name jest wymagane',
+            'min_length' => 3,
+            'max_length' => 30,
+        ]);
+        $this->form->lastname = $v->validateFromRequest('lastname',[
+            'trim' => true,
+            'required' => true,
+            'required_message' => 'lastname jest wymagane',
+            'min_length' => 3,
+            'max_length' => 30,
+        ]);
+        $this->form->email = $v->validateFromRequest('email',[
+            'trim' => true,
+            'required' => true,
+            'required_message' => 'email jest wymagane',
+            'email' => true,
+        ]);
+        $this->form->pass = $v->validateFromRequest('pass',[
+            'trim' => true,
+            'required' => true,
+            'required_message' => 'password jest wymagane',
+            'min_length' => 7,
+            'max_length' => 30,
+        ]);
 
         //nie ma sensu walidować dalej, gdy brak parametrów
         if (!isset($this->form->email))
             return false;
 
-        // sprawdzenie, czy potrzebne wartości zostały przekazane
-        if (empty($this->form->firstname)) {
-            Utils::addErrorMessage('Nie podano imienia');
-        }
-        if (empty($this->form->lastname)) {
-            Utils::addErrorMessage('Nie podano nazwiska');
-        }
-        if (empty($this->form->email)) {
-            Utils::addErrorMessage('Nie podano maila');
-        }
-        if (empty($this->form->pass)) {
-            Utils::addErrorMessage('Nie podano hasła');
-        }
-
+        // // sprawdzenie, czy potrzebne wartości zostały przekazane
+        // if (empty($this->form->firstname)) {
+        //    Utils::addErrorMessage('Nie podano imienia');
+        // }
+        // if (empty($this->form->lastname)) {
+        //     Utils::addErrorMessage('Nie podano nazwiska');
+        // }
+        // if (empty($this->form->email)) {
+        //     Utils::addErrorMessage('Nie podano maila');
+        // }
+        // if (empty($this->form->pass)) {
+        //     Utils::addErrorMessage('Nie podano hasła');
+        // }
         //nie ma sensu walidować dalej, gdy brak wartości
         if (App::getMessages()->isError())
             return false;
