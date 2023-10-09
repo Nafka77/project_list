@@ -13,6 +13,7 @@ use core\SessionUtils;
 class AdminEditCtrl {
 
     private $form;
+    private $person;
 
     public function __construct() {
         //stworzenie potrzebnych obiektów
@@ -44,6 +45,16 @@ class AdminEditCtrl {
         App::getRouter()->redirectTo("admin");
     }
 
+    // public function action_downolandUs() {
+    //     $this->validate();
+    //     $this->person = App::getDB()->query("
+    //         SELECT firstname, lastname, email, rola_id
+    //         FROM users
+    //         WHERE id= ".$this->form->id
+    //     )->fetchAll();
+    //     App::getRouter()->forwardTo("adminEdit");
+    // }
+
     public function action_adminDelete() {
         $this->validateEdit();
         $this->validate();
@@ -60,6 +71,7 @@ class AdminEditCtrl {
         App::getSmarty()->assign('user',SessionUtils::loadObject('user', true));
         App::getSmarty()->assign('form', $this->form); // dane formularza do widoku
         App::getSmarty()->assign('id', $this->form->id); // dane formularza do widoku
+        //App::getSmarty()->assign('person', $this->person);
         App::getSmarty()->display('adminEdit.tpl');
     }
 }

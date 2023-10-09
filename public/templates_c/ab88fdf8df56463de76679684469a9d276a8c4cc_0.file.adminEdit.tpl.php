@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-10-09 18:45:42
+/* Smarty version 4.3.0, created on 2023-10-09 23:31:50
   from 'C:\xampp\htdocs\project_list\app\views\adminEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_65242e36ed6176_65465718',
+  'unifunc' => 'content_65247146496630_36865933',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ab88fdf8df56463de76679684469a9d276a8c4cc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\project_list\\app\\views\\adminEdit.tpl',
-      1 => 1696257106,
+      1 => 1696887104,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65242e36ed6176_65465718 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65247146496630_36865933 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_119005807765242e36ebcaf3_34196389', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1025806237652471464871f5_24420647', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block "content"} */
-class Block_119005807765242e36ebcaf3_34196389 extends Smarty_Internal_Block
+class Block_1025806237652471464871f5_24420647 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_119005807765242e36ebcaf3_34196389',
+    0 => 'Block_1025806237652471464871f5_24420647',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,7 +64,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 									</div>
 									<div class="field">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
+										<input type="email" name="email"  id="email" />
 									</div>
 									<div class="field">
 										<label for="role">Role</label>
