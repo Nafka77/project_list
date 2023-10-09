@@ -28,6 +28,7 @@ class RegisterCtrl {
             'required_message' => 'name jest wymagane',
             'min_length' => 3,
             'max_length' => 30,
+            'validator_message' => 'imie powinno miec miedzy 3 a 30 znaki',
         ]);
         $this->form->lastname = $v->validateFromRequest('lastname',[
             'trim' => true,
@@ -35,6 +36,7 @@ class RegisterCtrl {
             'required_message' => 'lastname jest wymagane',
             'min_length' => 3,
             'max_length' => 30,
+            'validator_message' => 'nazwisko powinno miec miedzy 3 a 30 znaki',
         ]);
         $this->form->email = $v->validateFromRequest('email',[
             'trim' => true,
@@ -48,11 +50,8 @@ class RegisterCtrl {
             'required_message' => 'password jest wymagane',
             'min_length' => 7,
             'max_length' => 30,
+            'validator_message' => 'hasło powinno miec miedzy 3 a 30 znaki',
         ]);
-
-        //nie ma sensu walidować dalej, gdy brak parametrów
-        if (!isset($this->form->email))
-            return false;
 
         // // sprawdzenie, czy potrzebne wartości zostały przekazane
         // if (empty($this->form->firstname)) {

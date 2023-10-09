@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-10-09 19:57:43
+/* Smarty version 4.3.0, created on 2023-10-09 21:36:37
   from 'C:\xampp\htdocs\project_list\app\views\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_65243f17d6b073_97876271',
+  'unifunc' => 'content_652456452f7545_62695077',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a36889214989771418bd299197cc49242ff6d3ba' => 
     array (
       0 => 'C:\\xampp\\htdocs\\project_list\\app\\views\\index.tpl',
-      1 => 1696874196,
+      1 => 1696880193,
       2 => 'file',
     ),
   ),
@@ -21,22 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_65243f17d6b073_97876271 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652456452f7545_62695077 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_52451935065243f17d4d6c9_54685919', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1505124519652456452ae352_46360436', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block "content"} */
-class Block_52451935065243f17d4d6c9_54685919 extends Smarty_Internal_Block
+class Block_1505124519652456452ae352_46360436 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_52451935065243f17d4d6c9_54685919',
+    0 => 'Block_1505124519652456452ae352_46360436',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -58,7 +58,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 				<?php $_smarty_tpl->_subTemplateRender("file:messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 			</section>
-			<?php if (!empty($_smarty_tpl->tpl_vars['user']->value->login) && ($_smarty_tpl->tpl_vars['todo']->value) > 0) {?><input style="padding: 50px; font-size: larger;" type="text" id="search" placeholder="Szukaj..."><?php }?>
+			<?php if (!empty($_smarty_tpl->tpl_vars['user']->value->login) && ($_smarty_tpl->tpl_vars['todo']->value) > 0) {?><input style="padding: 50px; font-size: larger;" type="text" id="search" placeholder="Search..."><?php }?>
 		<!-- One -->
 			<section id="one" class="wrapper style2 spotlights block">
 				<?php if (!empty($_smarty_tpl->tpl_vars['user']->value->login)) {

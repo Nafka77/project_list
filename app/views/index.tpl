@@ -15,7 +15,7 @@
 				</div>
 				{include file="messages.tpl"}
 			</section>
-			{if !empty($user->login) && ($todo)>0}<input style="padding: 50px; font-size: larger;" type="text" id="search" placeholder="Szukaj...">{/if}
+			{if !empty($user->login) && ($todo)>0}<input style="padding: 50px; font-size: larger;" type="text" id="search" placeholder="Search...">{/if}
 		<!-- One -->
 			<section id="one" class="wrapper style2 spotlights block">
 				{if !empty($user->login)}{foreach $todo as $t}
