@@ -50,7 +50,7 @@ class RegisterCtrl {
             'required_message' => 'password jest wymagane',
             'min_length' => 7,
             'max_length' => 30,
-            'validator_message' => 'hasło powinno miec miedzy 3 a 30 znaki',
+            'validator_message' => 'hasło powinno miec miedzy 7 a 30 znaki',
         ]);
 
         // // sprawdzenie, czy potrzebne wartości zostały przekazane
